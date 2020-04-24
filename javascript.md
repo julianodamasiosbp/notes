@@ -528,4 +528,29 @@
 	finally {
 		// This code always runs
 	}
+
+*Throw*
+
+	- The throw statement allows you to create a custom error;
 	
+	try {
+    if(x == "") throw "is Empty";
+    if(isNaN(x)) throw "not a number";
+    if(x > 10) throw "too high";
+    if(x < 5) throw "too low";
+  }
+  catch(err) {
+    message.innerHTML = "Input " + err;
+  }
+
+#### Types of Erros
+
+	- ReferenceError;
+	- RangeError;
+	- TypeError;
+	- URIError;
+	- SyntaxError;
+	- EvalError;
+
+#### Object Data Type / Constructor
+
