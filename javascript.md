@@ -539,11 +539,13 @@
     if(x > 10) throw "too high";
     if(x < 5) throw "too low";
   }
-  catch(err) {
+  
+	catch(err) {
     message.innerHTML = "Input " + err;
   }
 
 #### Types of Erros
+---
 
 	- ReferenceError;
 	- RangeError;
@@ -553,4 +555,56 @@
 	- EvalError;
 
 #### Object Data Type / Constructor
+---
 
+
+#### 'This' in Javascript
+---
+
+	- Refers to an object;
+	- call and apply are very similar—they invoke a function with a specified this context, and optional arguments. 
+		The only difference between call and apply is that call requires the arguments to be passed in one-by-one, and apply takes 
+		the arguments as an array.
+		
+	const book = {
+		title: 'Brave New World',
+		author: 'Aldous Huxley',
+	}
+
+	function summary() {
+		console.log(`${this.title} was written by ${this.author}.`)
+	}
+
+	summary.call(book) -> Return "Brave New World was written by Aldous Huxley."
+
+	summary.apply(book) -> Return "Brave New World was written by Aldous Huxley."
+
+#### Spread Operator
+---
+
+	- Expand any 'iterable' such as a string or array into an array;
+	- The syntax uses the ellipsis symbol (...);
+	- Always on the right-side of an equal sign;
+	- Used to copy an array:
+	
+	let lista = [1, 2, 3];
+	let lista2 = [...lista];
+	
+*Concatenate two arrays*
+
+	let allProducts = [..._products, ...newProducts];
+
+*Pass parameters to a function*
+
+	function multipleParams(arg1, arg2, arg3) {
+		console.log(arg1);
+		console.log(arg2);
+		console.log(arg3);
+	}
+	
+	let args = [1, 2, 3];
+	
+	multipleParams(1, 2, 3);
+	or 
+	multipleParams(...args);
+	
