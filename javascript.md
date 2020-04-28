@@ -2,22 +2,26 @@
 
 #### Variable can vary;
 ---
+
 	let price = 40;
 	
 #### Constants can not vary:
 ---
+
 	const price = 40;
 
 ***Var variable is not used anymore;***
 
 #### Naming variables:
 ---
+
 	Begin with: _ $ letter
 
 #### Types and Operators
 ---
+
 	* Numbers;
-	<!-- * Strings; -->
+	* Strings;
 	* Booleans;
 	* Null and undefined;
 	* Objects and Symbols;
@@ -36,6 +40,7 @@
 
 #### Strings
 ---
+
 	3 styles:
 	* Single quotes ''
 	* Double quotes ""
@@ -55,6 +60,7 @@
 
 #### Booleans
 ---
+
 	* True;
 	* False;
 		
@@ -63,11 +69,13 @@
 
 #### Null and Undefined
 ---
+
 	Undefined -> When a variable is not initialized, the JS return "undefined";
 	Null -> Best pratice to declare a variable as null when needed;
 	
 #### Objects and Symbols
 ---
+
 	let person = {
 		firstName: 'João',
 		lastName: 'Silva'
@@ -77,6 +85,7 @@
 
 #### Conditionals IF
 ---
+
 	if (5 === 5){
 		console.log('Yes')
 	};
@@ -87,6 +96,7 @@
 
 #### Falsy and Truthy
 ---
+
 | Falsy                    | Truthy               |
 |--------------------------|----------------------|
 | false                    | Everything NOT falsy |
@@ -99,6 +109,7 @@
 	Dealing with float numbers -> (+(1.1 + 1.3).toFixed(2) === 2.4)
 
 #### if() ... else
+
 	if (state === 'RN'){
 		taxPercent = 7;
 	}
@@ -122,6 +133,7 @@
 	
 #### Looping with for()
 ---
+
 	for (let i = 0; i < 3; i++) {
 		console.log(i)
 	}
@@ -134,6 +146,7 @@
 
 #### while() Loop
 ---
+
 	let i = 0;
 	while (i < 11) {
 		console.log(i);
@@ -150,6 +163,7 @@
 
 #### Looping with do ... while()
 ---
+
 	let i = 0;
 	do {
 		console.log(i);
@@ -158,7 +172,8 @@
 
 #### Functions
 ---
-	Block of code that is named;
+
+	A fucntion is a block of organized, reusable code that is used to perform a single, related action;
 	
 	function showMessage() {
 		console.log('in a function');
@@ -176,7 +191,7 @@
 	
 ---
 
-	*Passing information to Function;*
+*Passing information to Function;*
 	
 	function showMessages(message, anotherMessage) {
 		consgole.log(message, anotherMessage)
@@ -186,7 +201,7 @@
 	
 ---
 
-	*Function return values;
+*Function return values;*
 	
 	function soma(a, b){
 		let soma = a + b;
@@ -195,8 +210,13 @@
 	
 	console.log(soma(7, 4)); -> Calling the function with return;
 
+*Arrow Functions*
+
+
+
 #### Object Properties
 ---
+
 	let person = {
 		name: 'João',
 		age: 33,
@@ -208,6 +228,7 @@
 
 #### Object Methods
 ---
+
 	let person = {
 		name: 'João',
 		lastname: 'Silva,
@@ -224,11 +245,13 @@
 	
 #### Document Object Model (DOM)
 ---
+
 	const header = document.getElementById('message');
 		header.style.color = 'blue'; -> This change the color of element to blue;
 	
 #### Arrays
 ---
+
 	let values = [];
 	let values = [1, 2, 3]; -> Values has 3 elements;
 	
@@ -557,6 +580,8 @@
 #### Object Data Type / Constructor
 ---
 
+	- typeof
+	- instanceof -> The instanceof operator tests the presence of constructor.prototype in object's prototype chain.
 
 #### 'This' in Javascript
 ---
@@ -594,7 +619,7 @@
 
 	let allProducts = [..._products, ...newProducts];
 
-*Pass parameters to a function*
+*Passing parameters to a function*
 
 	function multipleParams(arg1, arg2, arg3) {
 		console.log(arg1);
@@ -607,4 +632,59 @@
 	multipleParams(1, 2, 3);
 	or 
 	multipleParams(...args);
+
+*Shallow Copy on object literals*
+
+	let product = {
+		productID: 680,
+		name: 'HL Road Frame',
+		standardCost: 1059.31
+	};
 	
+	let prod2 = { ...product }; -> Shallow copy from product;
+
+#### Arrays and Collections
+---
+
+	- Data Collection -> Stores and structures large amounts of data types for easy access;
+	- Arrays, Objects, Sets, Maps, WeakSets, WeakMaps;
+	- Primitives Data types -> Boolean, Null, Undefined, Number, BigInt, String, Symbol;
+	- Structural Data type -> Object;
+
+*Sets*
+
+	- Each value in the Set has to be unique;
+	- Store values of any types, whether primitive values or object references;
+	- const mySet = new Set(); -> Creating a Set;
+	- mySet.add('1500'); -> Add new element to Set;
+	- mySet.delete('1500'); -> Delete '1500' from Set;
+	
+*WeakSet*
+
+	- Only contain objects;
+	- No primitive data types;
+	- Not iterable;
+	- No access to size property;
+	- Garbage collected;
+	- Methods: Add, Delete, Has;
+	
+	const categories = new WeakSet();
+	
+	let running = {category: 'Running'};
+	categories.add(running));
+
+*Maps*
+
+	// Add notes here;
+	
+*WeakMap*
+
+	// Add notes here;
+	
+*Typed Arrays*
+
+	let productBuffer = new ArrayBuffer(16);
+	
+	let view1 = new Int8Array(productBuffer);
+	
+	view1[0] = 32;
